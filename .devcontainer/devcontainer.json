@@ -1,0 +1,14 @@
+{
+  "name": "Cloud PC - Windows 10 in Browser",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "forwardPorts": [8006, 3389],
+  "portsAttributes": {
+    "8006": { "label": "Windows Desktop (browser)", "onAutoForward": "notify" },
+    "3389": { "label": "Windows RDP", "onAutoForward": "silent" }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "remoteUser": "vscode"
+}
